@@ -5,10 +5,10 @@ import { Promotion } from '@element-plus/icons-vue'
 </script>
 
 <template>
-    <div class="bg-gradient-to-r from-[#cee2f2] to-[#b2d0f4] flex justify-center w-[100%] h-[100%] py-10 px-20">
+    <div class="bg-gradient-to-r from-[#cee2f2] to-[#b2d0f4] flex justify-center w-[100%] h-[100%] py-20 px-40">
         <el-container>
             <el-aside width="250px" class="box mr-2 flex flex-col items-center">
-                <div class="h-12 leading-[3rem]">好友列表</div>
+                <div class="h-12 leading-[3rem] font-bold text-lg">好友列表</div>
                 <div class="friends">
                     <h1>年</h1>
                     <h2 class="text-sm">状态：在线</h2>
@@ -19,9 +19,23 @@ import { Promotion } from '@element-plus/icons-vue'
                 </div>
             </el-aside>
             <el-main style="--el-main-padding:0px" class="flex flex-col">
-                <h1 class="box h-12 leading-[3rem] mb-2">聊天室</h1>
+                <h1 class="box h-12 leading-[3rem] mb-2 font-bold text-lg">聊天室</h1>
                 <div class="box flex-1 flex flex-col">
-                    <div class="flex-1 overflow-y-auto "></div>
+                    <div class="flex-1 overflow-y-auto flex flex-col p-4">
+                        <div class="mine">
+                            <span class="minetext">你好！</span>
+                            <el-avatar :size="50" src="../../public/nian.webp" />
+                        </div>
+                        <div class="mine">
+                            <span class="minetext">你好！</span>
+                            <el-avatar :size="50" src="../../public/nian.webp" />
+                        </div>
+
+                        <div class="your">
+                            <el-avatar :size="50" src="../../public/xi.webp" />
+                            <span class="yourtext">早上好！</span>                       
+                        </div>
+                    </div>
                     <div class="h-12 leading-[3rem]">
                         <el-input v-model="input" style="width: 600px">
                             <template #prefix>
@@ -64,5 +78,32 @@ import { Promotion } from '@element-plus/icons-vue'
     width: 90%;
     margin-bottom: 5px;
     padding: 5px 5px;
+}
+.mine {   
+    width: fit-content;
+    align-self: flex-end;
+    margin-top: 5px;
+    display: flex;
+    align-items:center;
+}
+.minetext {
+    border-radius: 5px 1px 10px 5px;
+    background-color: #1e6eff;
+    color: white;
+    padding: 5px;
+    margin-right: 5px;
+}
+.your {  
+    width: fit-content;
+    margin-top: 5px;
+    display: flex;
+    align-items:center;   
+}
+.yourtext {
+    background-color: white;
+    border-radius:1px 5px 5px 10px;
+    color: black;
+    margin-left: 5px;
+    padding: 5px;
 }
 </style>

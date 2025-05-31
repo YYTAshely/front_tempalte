@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref,reactive } from 'vue';
 import router from '../router';
 const activeTab = ref('login')
+const formData = reactive({
+    username:'',
+    pwd:''
+})
 </script>
 
 
@@ -20,12 +24,12 @@ const activeTab = ref('login')
                         <span>帐号登录</span>
                     </template>
                     <el-form label-width="3rem" label-position="right" size="large" 
-                         ref="formRef">
+                         ref="formRef" :model="formData">
                         <el-form-item label="帐号" prop="username">
-                            <el-input  style="width: 222px;" />
+                            <el-input  style="width: 222px;"  v-model="formData.username"/>
                         </el-form-item>
-                        <el-form-item label="密码" prop="password">
-                            <el-input show-password style="width: 222px;" />
+                        <el-form-item label="密码" prop="pwd">
+                            <el-input show-password style="width: 222px;" v-model="formData.pwd"/>
                         </el-form-item>
                     </el-form>
                 </el-tab-pane>
