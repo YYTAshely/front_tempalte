@@ -1,7 +1,7 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
 import LoginView from '../pages/login.vue'
-import ChatroomView from '../pages/chatRoom.vue'
+import ChatroomView from '../pages/chatroom.vue'
 
 
 const routes = [

@@ -2,6 +2,25 @@
 import { ref } from 'vue'
 const input = ref('')
 import { Promotion } from '@element-plus/icons-vue'
+// import useWebSocket from '@/utils/websocket';//引入websocket.ts文件
+ 
+// import config from '@/config' //引入公共配置文件
+ 
+// const wsOptions = {
+//   url: config.wbBaseURL,
+// };
+ 
+// const { open, close, reconnect, on, send } = useWebSocket(wsOptions);
+ 
+// onMounted(() => {
+//   open();//在onMounted钩子中调用open函数，链接websocket
+ 
+//   // 注册消息接收处理函数
+//   on('message', (data) => {
+//     receivedMessage = data;
+//     console.log(data)
+//   });
+// });
 </script>
 
 <template>

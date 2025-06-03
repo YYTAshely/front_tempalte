@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CookieUtil } from "./cookie";
 const instance = axios.create({
     baseURL: 'http://localhost:3000/',
     timeout: 1000,
@@ -7,9 +8,8 @@ const instance = axios.create({
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-    const token = localStorage.getItem('token')
-    if(config.headers&&token){
-      config.headers.Authorization=token
+    if (CookieUtil.getCookie("token")) {
+      config.headers["Authorization"] = CookieUtil.getCookie("token");
     }
     return config;
   }, function (error) {
@@ -19,7 +19,7 @@ axios.interceptors.request.use(function (config) {
 // 添加响应拦截器
 axios.interceptors.response.use( (response):any=> {
     if(response.status==200){
-        return response;
+        return response
     }
     
   }, function (error) {
