@@ -17,4 +17,10 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  server: {
+    proxy: {
+      '/getUserId': 'http://localhost:8000'
+    }
+  }
 })
+

@@ -20,12 +20,13 @@ const emit = defineEmits(['sendId'])
 //捕捉图片
 const captureImage = async () => {
   const res = setImage()
-  console.log(res)
+  // console.log(res)
   if (res != undefined) {
     testImg.value = res
     const idData = await getUserId(res)
-    arrID.value = idData
-    emit('sendId', idData)
+    arrID.value = idData.data
+    // console.log(arrID.value)
+    emit('sendId', arrID)
   }
 }
 
@@ -169,7 +170,7 @@ defineExpose({
     </el-select>
     <video id="videoCamera" :width="videoWidth" :height="videoHeight" autoplay></video>
     <canvas id="canvasCamera" style="display: none;"></canvas>
-    <img :src="testImg" alt="我是测试图片">
+    <!-- <img :src="testImg" alt="我是测试图片"> -->
   </div>
 </template>
 
